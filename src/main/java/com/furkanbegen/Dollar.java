@@ -13,7 +13,7 @@ public class Dollar {
         this.amount = amount;
     }
 
-    public void times(int multiplayer){
-        amount *= multiplayer;
+    Dollar  times(int multiplayer){
+        return new Dollar(amount * multiplayer);
     }
 }

@@ -19,6 +19,7 @@ public class MoneyTest {
         assertEquals(new Dollar(10), prodcut);
         prodcut = five.times(3);
         assertEquals(new Dollar(15), prodcut);
+        assertNotEquals(new Dollar(5), new Franc(5));
     }
 
     @Test

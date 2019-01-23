@@ -3,6 +3,7 @@ package com.furkanbegen;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /**
  * @author furkanbegen
@@ -18,5 +19,11 @@ public class MoneyTest {
         assertEquals(10, prodcut.amount);
         prodcut = five.times(3);
         assertEquals(15, prodcut.amount);
+    }
+
+    @Test
+    void testEquality() {
+        assertEquals(new Dollar(5), new Dollar(5));
+        assertNotEquals(new Dollar(5), new Dollar(8));
     }
 }

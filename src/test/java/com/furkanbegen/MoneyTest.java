@@ -2,6 +2,8 @@ package com.furkanbegen;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Field;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -14,32 +16,27 @@ public class MoneyTest {
 
     @Test
     void testMultiplicationDollar() {
-        Dollar five = new Dollar(5);
-        Dollar prodcut = five.times(2);
-        assertEquals(new Dollar(10), prodcut);
-        prodcut = five.times(3);
-        assertEquals(new Dollar(15), prodcut);
-        assertNotEquals(new Dollar(5), new Franc(5));
+        Money five = Money.dollar(5);
+        assertEquals(Money.dollar(10), five.times(2));
+        assertEquals(Money.dollar(15), five.times(3));
     }
 
     @Test
     void testEqualityDollar() {
-        assertEquals(new Dollar(5), new Dollar(5));
-        assertNotEquals(new Dollar(5), new Dollar(8));
+        assertEquals(Money.dollar(5), Money.dollar(5));
+        assertNotEquals(Money.dollar(5), Money.dollar(8));
     }
 
     @Test
     void testMultiplicationFrank() {
-        Franc five = new Franc(5);
-        Franc prodcut = five.times(2);
-        assertEquals(new Franc(10), prodcut);
-        prodcut = five.times(3);
-        assertEquals(new Franc(15), prodcut);
+        Money five = Money.franc(5);
+        assertEquals(Money.franc(10), five.times(2));
+        assertEquals(Money.franc(15), five.times(3));
     }
 
      @Test
     void testEqualityFrank() {
-        assertEquals(new Franc(5), new Franc(5));
-        assertNotEquals(new Franc(5), new Franc(8));
+        assertEquals(Money.franc(5), Money.franc(5));
+        assertNotEquals(Money.franc(5), Money.franc(8));
     }
 }

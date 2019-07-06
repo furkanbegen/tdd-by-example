@@ -2,8 +2,6 @@ package com.furkanbegen;
 
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Field;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -38,5 +36,11 @@ public class MoneyTest {
     void testEqualityFrank() {
         assertEquals(Money.franc(5), Money.franc(5));
         assertNotEquals(Money.franc(5), Money.franc(8));
+    }
+
+    @Test
+    void testCurrency() {
+        assertEquals("USD", Money.dollar(1).currency());
+        assertEquals("CHF", Franc.franc(1).currency());
     }
 }

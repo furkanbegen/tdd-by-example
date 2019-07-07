@@ -6,4 +6,5 @@ package com.furkanbegen;
  * on project tdd-by-example
  */
 public interface Expression {
+    Money reduce(String to);
 }
